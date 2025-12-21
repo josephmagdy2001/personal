@@ -1,0 +1,320 @@
+:root {
+  --bg-grad: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+  --text-main: #1e293b;
+  --glass: rgba(255, 255, 255, 0.4);
+}
+.dark-mode {
+  --bg-grad: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  --text-main: #f1f5f9;
+  --glass: rgba(255, 255, 255, 0.05);
+}
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.resume-btn {
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}
+
+/* Subtle Pulse Animation */
+@keyframes resumePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+.resume-btn {
+  animation: resumePulse 2s infinite;
+}
+
+/* Make sure "Joseph Magdy Habib" is white in dark mode */
+.dark-mode #home h1 {
+  color: white !important;
+}
+
+/* Icon Animation on hover */
+.group-hover\:bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Nav Link Hover Effect */
+/* Navbar transition */
+nav {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Navbar background change on scroll */
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dark-mode nav.scrolled {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Desktop Nav Link Animation */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+#contact-form input,
+#contact-form textarea {
+  color: #1e293b; /* لون غامق للكتابة */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* خلفية بيضاء خفيفة لتوضيح مكان الكتابة */
+}
+
+/* Mobile Menu Open State */
+/* Ensure the mobile menu is on top of the 3D canvas and other elements */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9); /* More solid for light mode */
+  z-index: 999; /* Very high z-index */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transform: translateX(100%); /* Start hidden to the right */
+}
+
+.dark-mode #mobile-menu {
+  background: rgba(15, 23, 42, 0.95); /* Darker for dark mode */
+}
+
+#mobile-menu.active {
+  transform: translateX(0); /* Slide in */
+}
+
+/* Force the burger button to stay above the menu so you can close it */
+#menu-btn {
+  z-index: 1000;
+  position: relative;
+}
+body {
+  background: var(--bg-grad);
+  color: var(--text-main);
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+}
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+section {
+  min-height: 100vh;
+  padding: 100px 20px;
+}
+.wow-img {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.social-icon {
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+/* Floating Animation */
+.social-icon:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific Brand Glows */
+.social-icon:hover .fa-github {
+  filter: drop-shadow(0 0 5px #333);
+}
+.social-icon:hover .fa-linkedin-in {
+  filter: drop-shadow(0 0 5px #0077b5);
+}
+.social-icon:hover .fa-facebook-f {
+  filter: drop-shadow(0 0 5px #1877f2);
+}
+.social-icon:hover .fa-whatsapp {
+  filter: drop-shadow(0 0 5px #25d366);
+}
+.social-icon:hover .fa-envelope {
+  filter: drop-shadow(0 0 5px #ea4335);
+}
+
+/* Initial state animation */
+.social-icon {
+  animation: iconFadeIn 0.8s ease backwards;
+}
+
+@keyframes iconFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered delay for each icon */
+.social-icon:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.social-icon:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.social-icon:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.social-icon:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.social-icon:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* This forces the dark mode class to change global text colors */
+.dark-mode {
+  color: #ffffff;
+}
+
+.dark-mode p {
+  color: #f2f3f4; /* slate-300 for better readability on dark bg */
+}
+
+.dark-mode h1 {
+  color: #ffffff;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  transition: border 0.9s ease-in-out;
+}
+
+.skill-card:hover {
+  border: 1px solid rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
+}
+
+.neon-icon {
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Custom Scrollbar for the 3D feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+/* Ensure the glass effect is strong in the footer */
+footer .glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Your Social Icon Glows */
+.social-icon:hover .fa-github {
+  filter: drop-shadow(0 0 10px #ffffff);
+}
+.social-icon:hover .fa-linkedin-in {
+  filter: drop-shadow(0 0 10px #0077b5);
+}
+.social-icon:hover .fa-whatsapp {
+  filter: drop-shadow(0 0 10px #25d366);
+}
+.social-icon:hover .fa-envelope {
+  filter: drop-shadow(0 0 10px #ea4335);
+}
+
+/* Floating animation for the footer card */
+.glass {
+  animation: footerFloat 6s ease-in-out infinite;
+}
+
+@keyframes footerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

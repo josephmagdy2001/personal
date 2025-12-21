@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+            overflow: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        .stars {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            background-image: radial-gradient(white, rgba(255,255,255,0.2) 2px, transparent 40px);
+            background-size: 150px 150px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="h-screen w-full flex items-center justify-center text-white font-sans">
+    <div class="stars opacity-30"></div>
+
+    <div class="relative z-10 flex flex-col items-center max-w-2xl px-6 text-center">
+        <div class="floating animate__animated animate__fadeInDown">
+            <h1 class="text-[12rem] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-blue-400 to-purple-600 opacity-20 absolute -top-24 left-1/2 -translate-x-1/2 select-none">
+                404
+            </h1>
+            <h1 class="text-9xl font-bold text-glow relative z-10">404</h1>
+        </div>
+
+        <div class="glass-card p-8 md:p-12 rounded-3xl mt-8 animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-semibold mb-4 text-blue-300">Lost in the Data Cosmos</h2>
+            <p class="text-slate-400 mb-8 text-lg leading-relaxed">
+                The page you're looking for has drifted beyond the event horizon. 
+                It either never existed or was deleted by a stray asteroid.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+            
+                <button onclick="history.back()" class="px-8 py-3 border border-white/20 hover:bg-white/10 rounded-full font-bold transition-all">
+                    GO BACK
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-12 opacity-50 text-sm tracking-widest uppercase text-slate-500">
+            Error Code: ERR_SPACE_DRIFT_404
+        </div>
+    </div>
+
+    <div class="fixed top-1/4 -left-20 w-80 h-80 bg-blue-600/20 rounded-full blur-[120px] -z-10 animate__animated animate__pulse animate__infinite"></div>
+    <div class="fixed bottom-1/4 -right-20 w-80 h-80 bg-purple-600/20 rounded-full blur-[120px] -z-10 animate__animated animate__pulse animate__infinite animate__slow"></div>
+</body>
+</html>
