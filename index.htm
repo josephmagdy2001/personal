@@ -1,126 +1,807 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joseph Magdy Habib | Web Dev Portfolio</title>
-    
-    <link rel="icon" type="image/png" href="photo/manager.png" sizes="32x32">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="js.css" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/js.css" />
+    <title>Portfolio</title>
+    <link rel="icon" type="image/png" href="/photo/manager.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/logo-glow.svg">
+ 
+         <title>Joseph Magdy Habib | Web Dev Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="js.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
 
-<body>
-    <div id="canvas-container"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
-    <nav class="fixed w-full z-[100] px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center relative">
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      </head>
+
+      <body>
+        <div id="canvas-container"></div>
+
+        <nav class="fixed w-full z-[100] px-6 py-4">
+          <div
+            class="max-w-6xl mx-auto flex justify-between items-center relative"
+          >
             <div class="font-bold text-xl">JM.HABIB</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
-                <button id="menu-btn" class="md:hidden flex flex-col gap-1.5" aria-label="Menu">
-                    <span class="w-6 h-0.5 bg-slate-800" id="line1"></span>
-                    <span class="w-6 h-0.5 bg-slate-800" id="line2"></span>
-                    <span class="w-6 h-0.5 bg-slate-800" id="line3"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <section id="home" class="flex items-center justify-center max-w-6xl mx-auto min-h-screen">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+            <div class="hidden md:flex space-x-8">
+              <a href="#home" class="nav-link">Home</a>
+              <a href="#about" class="nav-link">About</a>
+              <a href="#projects" class="nav-link">Projects</a>
+              <a href="#education" class="nav-link">Education</a>
+              <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <button id="theme-toggle">🌙</button>
+              <button id="menu-btn" class="md:hidden flex flex-col gap-1.5">
+                <span class="w-6 h-0.5 bg-slate-800" id="line1"></span>
+                <span class="w-6 h-0.5 bg-slate-800" id="line2"></span>
+                <span class="w-6 h-0.5 bg-slate-800" id="line3"></span>
+              </button>
+            </div>
+          </div>
+
+          <div id="mobile-menu" class="md:hidden">
+            <a href="#home" class="mobile-nav-link text-2xl font-bold">Home</a>
+            <a href="#about" class="mobile-nav-link text-2xl font-bold"
+              >About</a
+            >
+            <a href="#projects" class="mobile-nav-link text-2xl font-bold"
+              >Projects</a
+            >
+            <a href="#education" class="mobile-nav-link text-2xl font-bold"
+              >Education</a
+            >
+            <a href="#contact" class="mobile-nav-link text-2xl font-bold"
+              >Contact</a
+            >
+          </div>
+        </nav>
+        <section
+          id="home"
+          class="flex items-center justify-center max-w-6xl mx-auto"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full"
+          >
             <div>
-                <h1 class="text-5xl font-black mb-2"><b>Joseph Magdy Habib</b></h1>
-                <h2 class="text-2xl text-blue-500 font-semibold mb-6">Joiner Backend Web Developer {PHP / Laravel}</h2>
-                <div class="flex flex-wrap gap-4 mb-8">
-                    <a href="https://github.com/josephmagdy2001" target="_blank" class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#333]"><i class="fab fa-github text-2xl"></i></a>
-                    <a href="https://www.linkedin.com/in/josephmagdy" target="_blank" class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#0077b5]"><i class="fab fa-linkedin-in text-xl"></i></a>
-                    <a href="wa.me/+201112215391" class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#25d366]"><i class="fab fa-whatsapp text-xl"></i></a>
-                    <div class="flex items-center gap-4">
-                        <a href="photo/PHP -CV.pdf" download class="resume-btn relative overflow-hidden px-8 py-3 rounded-xl font-bold text-white flex items-center gap-2">
-                            <span class="relative z-10">Download Resume</span>
-                            <i class="fas fa-file-download relative z-10"></i>
-                            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600"></div>
-                        </a>
-                    </div>
+              <h1 class="text-5xl font-black mb-2">
+                <b>Joseph Magdy Habib</b>
+              </h1>
+              <h2 class="text-2xl text-blue-500 font-semibold mb-6">
+                Joiner Backend Web Developer {PHP / Laravel}
+              </h2>
+              <div class="flex flex-wrap gap-4 mb-8">
+                <a
+                  href="https://github.com/josephmagdy2001"
+                  target="_blank"
+                  class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#333]"
+                >
+                  <i
+                    class="fab fa-github text-2xl transition-all group-hover:scale-110"
+                  ></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/josephmagdy"
+                  target="_blank"
+                  class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#0077b5]"
+                >
+                  <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/joseph.magdy.309279/"
+                  target="_blank"
+                  class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#1877f2]"
+                >
+                  <i class="fab fa-facebook-f text-xl"></i>
+                </a>
+
+                <a
+                  href="https://wa.me/+201112215391"
+                  target="_blank"
+                  class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#25d366]"
+                >
+                  <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+
+                <a
+                  href="https://mailto:josephmagdy56@gmail.com"
+                  class="social-icon glass w-12 h-12 flex items-center justify-center hover:text-white hover:bg-[#ea4335]"
+                >
+                  <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <div class="flex items-center gap-4">
+                  <a
+                    href="/photo/PHP -CV.pdf"
+                    download
+                    class="resume-btn relative overflow-hidden px-8 py-3 rounded-xl font-bold text-white flex items-center gap-2 transition-all duration-300 group"
+                  >
+                    <span class="relative z-10">Download Resume</span>
+                    <i
+                      class="fas fa-file-download relative z-10 group-hover:bounce"
+                    ></i>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 transition-all duration-300"
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-r from-violet-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                    ></div>
+                  </a>
                 </div>
+              </div>
             </div>
             <div class="flex justify-center">
-                <div class="w-80 h-80 glass rounded-full overflow-hidden border-8 border-white/20 shadow-2xl">
-                    <img src="photo/jo.jpg.png" alt="Joseph" class="w-full h-full object-cover" />
-                </div>
+              <div
+                class="w-90 h-85 glass rounded-full overflow-hidden border-10 border-white/20 shadow-2xl"
+              >
+                <img
+                  src="photo\jo.jpg.png"
+                  alt="Joseph"
+                  class="w-full h-full object-cover"
+                />
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <section id="about" class="max-w-6xl mx-auto py-24 px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section id="about" class="max-w-6xl mx-auto py-24 px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <div class="glass p-4 rotate-3 hover:rotate-0 transition-all duration-700">
-                    <img src="photo/jo2.jpg.png" alt="Joseph Magdy Habib" class="rounded-2xl w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" />
-                </div>
+              <div
+                class="wow-img shadow-2xl glass p-4 rotate-3 hover:rotate-0 transition-all duration-700 relative group"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"
+                ></div>
+                <img
+                  src="/photo/jo2.jpg.png"
+                  alt="Joseph Magdy Habib"
+                  class="rounded-2xl w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 shadow-inner"
+                />
+              </div>
             </div>
+
             <div class="reveal space-y-8">
-                <h2 class="text-5xl font-black tracking-tighter">Driven by <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">Logic</span></h2>
-                <p class="text-xl text-slate-700 leading-relaxed italic">"I view coding as an intellectual sport. Beyond syntax, I am committed to Problem Solving."</p>
-            </div>
-        </div>
-    </section>
+              <div class="space-y-2">
+                <h2 class="text-5xl font-black tracking-tighter leading-tight">
+                  Driven by
+                  <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600"
+                    >Logic</span
+                  >,<br />
+                  Defined by Code.
+                </h2>
+                <div
+                  class="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"
+                ></div>
+              </div>
 
-    <section id="projects" class="max-w-6xl mx-auto py-20 px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <p class="text-xl text-slate-700 leading-relaxed font-medium">
+                Hello! I'm
+                <span class="text-blue-600 font-bold">Joseph Magdy Habib</span>.
+                I am a Web Developer who thrives at the intersection of
+                aesthetic design and complex functionality. I specialize in
+                building high-performance websites that blend **3D
+                interactivity** with modern, user-centric interfaces.
+              </p>
+
+              <div
+                class="glass p-8 space-y-5 border-l-8 border-violet-500 relative overflow-hidden"
+              >
+                <h3 class="text-2xl font-bold flex items-center gap-3">
+                  <svg
+                    class="w-8 h-8 text-violet-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.364-6.364l-.707-.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M12 7a5 5 0 015 5 5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5z"
+                    ></path>
+                  </svg>
+                  My Philosophy
+                </h3>
+                <p class="text-slate-600 text-lg leading-relaxed italic">
+                  "I view coding as an intellectual sport. Beyond the syntax, I
+                  am deeply committed to **Problem Solving** and **Logical
+                  Thinking**. To me, these aren't just skills—they are hobbies
+                  that foster mental maturity and build a structured,
+                  engineering-first mindset."
+                </p>
+
+                <div class="pt-4">
+                  <p
+                    class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3"
+                  >
+                    Core Interests
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    <span
+                      class="px-5 py-2 bg-white/50 border border-blue-100 text-blue-700 rounded-xl text-sm font-bold hover:bg-blue-600 hover:text-white transition cursor-default"
+                      >🧠 Problem Solving</span
+                    >
+                    <span
+                      class="px-5 py-2 bg-white/50 border border-violet-100 text-violet-700 rounded-xl text-sm font-bold hover:bg-violet-600 hover:text-white transition cursor-default"
+                      >🔍 Logical Analysis</span
+                    >
+                    <span
+                      class="px-5 py-2 bg-white/50 border border-slate-100 text-slate-700 rounded-xl text-sm font-bold hover:bg-slate-600 hover:text-white transition cursor-default"
+                      >📚 Reading</span
+                    >
+                    <span
+                      class="px-5 py-2 bg-white/50 border border-emerald-100 text-emerald-700 rounded-xl text-sm font-bold hover:bg-emerald-600 hover:text-white transition cursor-default"
+                      >💻 Advanced Coding</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="skills-3d-section"
+          class="relative min-h-screen flex items-center py-20 overflow-hidden"
+        >
+          <div id="vanta-canvas" class="absolute inset-0 z-0"></div>
+
+          <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
+            <div class="text-center mb-16">
+              <h2
+                class="text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-lg"
+              >
+                Tech Skills <span class="text-blue-400"> </span>
+              </h2>
+              <p class="text-blue-200/70 uppercase tracking-[0.3em] text-sm">
+                Navigation Through My Skills
+              </p>
+            </div>
+
+            <div
+              id="skills-grid"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            ></div>
+          </div>
+        </section>
+
+        <section id="projects" class="max-w-6xl mx-auto py-20 px-6">
+          <h2 class="text-4xl font-bold text-center mb-12">
+            Featured Projects
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="glass p-6 group flex flex-col h-full">
-                <div class="overflow-hidden rounded-xl mb-4 h-48">
-                    <img src="photo/work1.jpg" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                </div>
-                <h3 class="text-xl font-bold mb-2">Hospital Management</h3>
-                <a href="https://github.com/josephmagdy2001/Hospital-Management-System" target="_blank" class="text-blue-500 font-bold hover:underline mt-auto">View Code</a>
+              <div class="overflow-hidden rounded-xl mb-4 h-48 bg-slate-200">
+                <img
+                  src="/photo/work1.jpg"
+                  alt="Project 1"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2">Hospital-Management-System</h3>
+              <p class="text-sm opacity-70 mb-6 flex-grow">
+                [HTML 5 – CSS3 – JS – Bootstrap - PHP – My SQl ]
+              </p>
+              <div
+                class="flex justify-between items-center border-t border-white/20 pt-4"
+              >
+                <a
+                  href="/404.html"
+                  class="text-blue-500 font-bold hover:underline flex items-center gap-2"
+                >
+                  <span>Demo</span>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/josephmagdy2001/Hospital-Management-System"
+                  target="_blank"
+                  class="opacity-60 hover:opacity-100 transition"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-            <div class="glass p-6 group flex flex-col h-full">
-                <div class="overflow-hidden rounded-xl mb-4 h-48">
-                    <img src="photo/work2.jpg" alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                </div>
-                <h3 class="text-xl font-bold mb-2">PHP Food Website</h3>
-                <a href="https://github.com/josephmagdy2001/PHP_food_website" target="_blank" class="text-blue-500 font-bold hover:underline mt-auto">View Code</a>
+
+            <div
+              class="glass p-6 group hover:scale-105 transition duration-300 flex flex-col h-full"
+            >
+              <div class="overflow-hidden rounded-xl mb-4 h-48 bg-slate-200">
+                <img
+                  src="/photo/work2.jpg"
+                  alt="Project 1"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2">PHP_food_website</h3>
+              <p class="text-sm opacity-70 mb-6 flex-grow">
+                [HTML 5 – CSS3 – JS – Bootstrap - Ajax - RESTful - API - Blade -
+                Laravel - PHP – My SQl ]
+              </p>
+              <div
+                class="flex justify-between items-center border-t border-white/20 pt-4"
+              >
+                <a
+                  href="https://github.com/josephmagdy2001/PHP_food_website"
+                  target="_blank"
+                  class="text-blue-500 font-bold hover:underline flex items-center gap-2"
+                >
+                  <span>Demo</span>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/josephmagdy2001/PHP_food_website"
+                  target="_blank"
+                  class="opacity-60 hover:opacity-100 transition"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-             <div class="glass p-6 group flex flex-col h-full">
-                <div class="overflow-hidden rounded-xl mb-4 h-48">
-                    <img src="photo/work7.png" alt="Project 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                </div>
-                <h3 class="text-xl font-bold mb-2">Quiz App System</h3>
-                <a href="https://github.com/josephmagdy2001/QuizApp" target="_blank" class="text-blue-500 font-bold hover:underline mt-auto">View Code</a>
+
+            <div
+              class="glass p-6 group hover:scale-105 transition duration-300 flex flex-col h-full"
+            >
+              <div class="overflow-hidden rounded-xl mb-4 h-48 bg-slate-200">
+                <img
+                  src="/photo/work6.jpg"
+                  alt="Project 1"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                Internship_Background_Generator
+              </h3>
+              <p class="text-sm opacity-70 mb-6 flex-grow">
+                [HTML 5 – CSS3 – JS – Bootstrap - ReactJs - Three js 3d ]
+              </p>
+              <div
+                class="flex justify-between items-center border-t border-white/20 pt-4"
+              >
+                <a
+                  href="https://code-clause-internship-background-generator.vercel.app/"
+                  target="_blank"
+                  class="text-blue-500 font-bold hover:underline flex items-center gap-2"
+                >
+                  <span>Demo</span>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/josephmagdy2001/CodeClauseInternship_Background_Generator"
+                  target="_blank"
+                  class="opacity-60 hover:opacity-100 transition"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <section id="education" class="max-w-6xl mx-auto py-20 px-6">
-        <h2 class="text-4xl font-bold text-center mb-16">Certifications</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <img src="photo/jo3.jpg" class="rounded-xl shadow-lg" alt="Cert 1">
-            <img src="photo/jo4.jpg" class="rounded-xl shadow-lg" alt="Cert 2">
-        </div>
-    </section>
+            <div
+              class="glass p-6 group hover:scale-105 transition duration-300 flex flex-col h-full"
+            >
+              <div class="overflow-hidden rounded-xl mb-4 h-48 bg-slate-200">
+                <img
+                  src="/photo/work5.jpg"
+                  alt="Project 1"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2">Internship_music-platform</h3>
+              <p class="text-sm opacity-70 mb-6 flex-grow">
+                [HTML 5 – CSS3 – JS – PHP - MySQL ]
+              </p>
+              <div
+                class="flex justify-between items-center border-t border-white/20 pt-4"
+              >
+                <a
+                  href="https://www.awesomescreenshot.com/video/29192328?key=558a4e27877344b02be8ddb2b41416b4"
+                  target="_blank"
+                  class="text-blue-500 font-bold hover:underline flex items-center gap-2"
+                >
+                  <span>Demo</span>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/josephmagdy2001/CodeClauseInternship_music-platform"
+                  target="_blank"
+                  class="opacity-60 hover:opacity-100 transition"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
 
-    <footer class="bg-[#0f172a] text-white py-16 text-center">
-        <p>&copy; 2025 Joseph Magdy. All Rights Reserved.</p>
-    </footer>
+            <div
+              class="glass p-6 group hover:scale-105 transition duration-300 flex flex-col h-full"
+            >
+              <div class="overflow-hidden rounded-xl mb-4 h-48 bg-slate-200">
+                <img
+                  src="/photo/work7.png"
+                  alt="Project 1"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2">QuizAppSystem</h3>
+              <p class="text-sm opacity-70 mb-6 flex-grow">
+                [HTML 5 – CSS3 – JS – Bootstrap - React Js - Ajax - O Auth - JWT
+                - RESTful - API - Blade - Laravel - PHP – My SQl ]
+              </p>
+              <div
+                class="flex justify-between items-center border-t border-white/20 pt-4"
+              >
+                <a
+                  href="https://github.com/josephmagdy2001/QuizApp"
+                  target="_parent"
+                  class="text-blue-500 font-bold hover:underline flex items-center gap-2"
+                >
+                  <span>Demo</span>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/josephmagdy2001/QuizApp"
+                  target="_blank"
+                  class="opacity-60 hover:opacity-100 transition"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
 
+            <div
+              class="glass p-6 group hover:scale-105 transition duration-300 flex flex-col h-full"
+            >
+              <div class="overflow-hidden rounded-xl mb-4 h-48 bg-slate-200">
+                <img
+                  src="/photo/work3.png"
+                  alt="Project 1"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                Smart_IT_ExitExam_Portal_Grad
+              </h3>
+              <p class="text-sm opacity-70 mb-6 flex-grow">
+                  [HTML 5 – CSS3 – JS – Bootstrap - React Js - Ajax -
+                - RESTful - API - - PHP – My SQl ]
+              </p>
+              <div
+                class="flex justify-between items-center border-t border-white/20 pt-4"
+              >
+                <a
+                  href="https://www.linkedin.com/posts/josephmagdy_%F0%9D%90%84%F0%9D%90%B1%F0%9D%90%9C%F0%9D%90%A2%F0%9D%90%AD%F0%9D%90%9E%F0%9D%90%9D-%F0%9D%90%AD%F0%9D%90%A8-%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%A7%F0%9D%90%A8%F0%9D%90%AE%F0%9D%90%A7%F0%9D%90%9C%F0%9D%90%9E-%F0%9D%90%A6%F0%9D%90%B2-activity-7215019573798965248-kd0A?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1Dz8cBlF0P5kU46Sh7vm_74HjQrGPzBYs"
+                  target="_blank"
+                  class="text-blue-500 font-bold hover:underline flex items-center gap-2"
+                >
+                  <span>Demo</span>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/josephmagdy2001/Smart_IT_Exit_Exam_Portal_Graduation"
+                  target="_blank"
+                  class="opacity-60 hover:opacity-100 transition"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="max-w-6xl mx-auto py-20 px-6">
+          <h2 class="text-4xl font-bold text-center mb-16">Academic Journey</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-1 space-y-8">
+              <div class="glass p-8 relative border-l-4 border-blue-500 reveal">
+                <div
+                  class="absolute -left-3 top-8 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"
+                ></div>
+                <h3 class="text-2xl font-bold text-blue-600">
+                  South Valley University EELU
+                </h3>
+                <p class="font-semibold opacity-80">
+                  Faculty of Computer and Information Technology
+                </p>
+                <div
+                  class="flex items-center gap-2 mt-4 text-sm font-medium text-slate-500"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <span>2020 — 2024 (Graduated)</span>
+                </div>
+                <p class="mt-4 text-sm leading-relaxed opacity-70">
+                  Specializing in Software Engineering and Web Technologies.
+                  Focused on building scalable applications.
+                </p>
+              </div>
+
+              <div class="glass p-6 reveal" style="transition-delay: 0.2s">
+                <h4 class="font-bold mb-4 flex items-center gap-2">
+                  <span class="text-violet-500">●</span> Key Courses
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Data Structures</span
+                  >
+                  <span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Algorithms</span
+                  >
+                  <span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Databases</span
+                  >
+                  <span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >OOP</span
+                  >
+                  <span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Intro to Front-End</span
+                  >
+                  <span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >HTML and CSS In-Depth</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Interview Prep</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Advanced React</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Version Control</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Principles of UX/UI</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Operating Systems</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Troubleshooting</span
+                  ><span class="px-3 py-1 bg-white/40 rounded-full text-xs"
+                    >Networking</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-2">
+              <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                Professional Certifications
+              </h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div
+                  class="glass p-3 group cursor-pointer reveal"
+                  style="transition-delay: 0.1s"
+                >
+                  <div
+                    class="relative overflow-hidden rounded-lg aspect-video bg-slate-100 mb-2"
+                  >
+                    <img
+                      src="/photo/jo3.jpg"
+                      alt="Cert 1"
+                      class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div
+                      class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+                    >
+                      <a
+                        href="https://www.coursera.org/account/accomplishments/verify/W8RL4A3UMDHB?utm_product=course"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >See it</a
+                      >
+                    </div>
+                  </div>
+                  <p class="text-xs font-bold truncate">
+                    Meta Front-End Developer
+                  </p>
+                </div>
+
+                <div
+                  class="glass p-3 group cursor-pointer reveal"
+                  style="transition-delay: 0.2s"
+                >
+                  <div
+                    class="relative overflow-hidden rounded-lg aspect-video bg-slate-100 mb-2"
+                  >
+                    <img
+                      src="/photo/jo4.jpg"
+                      alt="Cert 2"
+                      class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div
+                      class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
+                    >
+                      <a
+                        href="https://www.coursera.org/account/accomplishments/certificate/3APC27QK86ST"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >See it</a
+                      >
+                    </div>
+                  </div>
+
+                  <p class="text-xs font-bold truncate">
+                    Technical Support Fundamentals
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+          <form id="contact-form" class="glass p-10 space-y-4">
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Name"
+              class="w-full p-4 rounded-xl bg-white/10 outline-none focus:ring-2 ring-blue-400"
+              required
+            />
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Email"
+              class="w-full p-4 rounded-xl bg-white/10 outline-none focus:ring-2 ring-blue-400"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="5"
+              class="w-full p-4 rounded-xl bg-white/10 outline-none focus:ring-2 ring-blue-400"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition"
+            >
+              Send
+            </button>
+          </form>
+        </section>
+        <footer class="relative w-full py-16 overflow-hidden bg-[#0f172a]">
+          <div id="footer-3d-bg" class="absolute inset-0 z-0"></div>
+
+          <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <div
+              class="glass p-10 rounded-[2rem] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-10"
+            >
+              <div class="text-center md:text-left">
+                <h2 class="text-3xl font-bold text-white mb-2 tracking-tighter">
+                  LETS BUILD <span class="text-blue-500">TOGETHER</span>
+                </h2>
+                <p class="text-slate-400 max-w-xs">
+                  Open for collaborations and full-stack opportunities.
+                  Available starting 2025.
+                </p>
+                <p class="mt-6 text-xs text-slate-500 font-mono">
+                  <strong><b>Joseph Magdy</b></strong> &copy; 2025 ALL RIGHTS
+                  RESERVED.
+                </p>
+              </div>
+
+              <button
+                class="px-8 py-4 bg-white text-black font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] active:scale-95"
+              >
+                <a href="/index.htm" target="_blank" rel="noopener noreferrer">
+                  START A PROJECT</a
+                >
+              </button>
+            </div>
+          </div>
+        </footer>
+        <script src="jo.js"></script>
+      </body>
+    </html>
     <script src="jo.js"></script>
-</body>
+  </body>
 </html>
